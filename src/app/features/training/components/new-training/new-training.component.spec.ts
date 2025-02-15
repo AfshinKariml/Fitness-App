@@ -1,13 +1,25 @@
-import { New-training.component } from './new-training.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NewTrainingComponent } from './new-training.component';
 
-describe('New-training.component', () => {
-  let instance: New-training.component;
 
-  beforeEach(() => {
-    instance = new New-training.component();
+describe('NewTrainingComponent', () => {
+  let component: NewTrainingComponent;
+  let fixture: ComponentFixture<NewTrainingComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ NewTrainingComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(NewTrainingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

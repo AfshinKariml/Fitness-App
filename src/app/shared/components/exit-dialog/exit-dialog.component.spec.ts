@@ -1,13 +1,25 @@
-import { Exit-dialog.component } from './exit-dialog.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ExitDialogComponent } from './exit-dialog.component';
 
-describe('Exit-dialog.component', () => {
-  let instance: Exit-dialog.component;
 
-  beforeEach(() => {
-    instance = new Exit-dialog.component();
+describe('ExitDialogComponent', () => {
+  let component: ExitDialogComponent;
+  let fixture: ComponentFixture<ExitDialogComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ExitDialogComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ExitDialogComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

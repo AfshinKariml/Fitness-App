@@ -1,13 +1,25 @@
-import { Stop-training.component } from './stop-training.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StopTrainingComponent } from './stop-training.component';
 
-describe('Stop-training.component', () => {
-  let instance: Stop-training.component;
 
-  beforeEach(() => {
-    instance = new Stop-training.component();
+describe('StopTrainingComponent', () => {
+  let component: StopTrainingComponent;
+  let fixture: ComponentFixture<StopTrainingComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ StopTrainingComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(StopTrainingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

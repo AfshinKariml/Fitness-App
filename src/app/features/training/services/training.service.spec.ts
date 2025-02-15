@@ -1,1 +1,0 @@
-"describe('features/training/services/training.service', () => {});"

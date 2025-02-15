@@ -1,13 +1,25 @@
-import { Auth-dialog.component } from './auth-dialog.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AuthDialogComponent } from './auth-dialog.component';
 
-describe('Auth-dialog.component', () => {
-  let instance: Auth-dialog.component;
 
-  beforeEach(() => {
-    instance = new Auth-dialog.component();
+describe('AuthDialogComponent', () => {
+  let component: AuthDialogComponent;
+  let fixture: ComponentFixture<AuthDialogComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AuthDialogComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AuthDialogComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

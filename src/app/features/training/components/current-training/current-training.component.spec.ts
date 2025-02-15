@@ -1,13 +1,25 @@
-import { Current-training.component } from './current-training.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CurrentTrainingComponent } from './current-training.component';
 
-describe('Current-training.component', () => {
-  let instance: Current-training.component;
 
-  beforeEach(() => {
-    instance = new Current-training.component();
+describe('CurrentTrainingComponent', () => {
+  let component: CurrentTrainingComponent;
+  let fixture: ComponentFixture<CurrentTrainingComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ CurrentTrainingComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CurrentTrainingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

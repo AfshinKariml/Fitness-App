@@ -1,13 +1,25 @@
-import { Bmi-dialog.component } from './bmi-dialog.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BmiDialogComponent } from './bmi-dialog.component';
 
-describe('Bmi-dialog.component', () => {
-  let instance: Bmi-dialog.component;
 
-  beforeEach(() => {
-    instance = new Bmi-dialog.component();
+describe('BmiDialogComponent', () => {
+  let component: BmiDialogComponent;
+  let fixture: ComponentFixture<BmiDialogComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ BmiDialogComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(BmiDialogComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

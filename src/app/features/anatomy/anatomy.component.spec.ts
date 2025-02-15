@@ -1,13 +1,25 @@
-import { Anatomy.component } from './anatomy.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AnatomyComponent } from './anatomy.component';
 
-describe('Anatomy.component', () => {
-  let instance: Anatomy.component;
 
-  beforeEach(() => {
-    instance = new Anatomy.component();
+describe('AnatomyComponent', () => {
+  let component: AnatomyComponent;
+  let fixture: ComponentFixture<AnatomyComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AnatomyComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AnatomyComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

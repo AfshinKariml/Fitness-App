@@ -1,1 +1,0 @@
-"describe('shared/services/ui.service', () => {});"

@@ -1,13 +1,25 @@
-import { Past-training.component } from './past-training.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PastTrainingComponent } from './past-training.component';
 
-describe('Past-training.component', () => {
-  let instance: Past-training.component;
 
-  beforeEach(() => {
-    instance = new Past-training.component();
+describe('PastTrainingComponent', () => {
+  let component: PastTrainingComponent;
+  let fixture: ComponentFixture<PastTrainingComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ PastTrainingComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(PastTrainingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

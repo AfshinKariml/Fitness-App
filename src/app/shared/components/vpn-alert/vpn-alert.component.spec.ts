@@ -1,13 +1,24 @@
-import { Vpn-alert.component } from './vpn-alert.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { VpnAlertComponent } from './vpn-alert.component';
 
-describe('Vpn-alert.component', () => {
-  let instance: Vpn-alert.component;
+describe('VpnAlertComponent', () => {
+  let component: VpnAlertComponent;
+  let fixture: ComponentFixture<VpnAlertComponent>;
 
-  beforeEach(() => {
-    instance = new Vpn-alert.component();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ VpnAlertComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(VpnAlertComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

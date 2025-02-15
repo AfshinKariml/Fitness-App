@@ -1,13 +1,25 @@
-import { Anatomy-page.component } from './anatomy-page.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AnatomyPageComponent } from './anatomy-page.component';
 
-describe('Anatomy-page.component', () => {
-  let instance: Anatomy-page.component;
 
-  beforeEach(() => {
-    instance = new Anatomy-page.component();
+describe('AnatomyPageComponent', () => {
+  let component: AnatomyPageComponent;
+  let fixture: ComponentFixture<AnatomyPageComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AnatomyPageComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AnatomyPageComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

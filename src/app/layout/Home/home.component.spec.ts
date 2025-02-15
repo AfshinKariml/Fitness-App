@@ -1,13 +1,25 @@
-import { Home.component } from './home.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HomeComponent } from './home.component';
 
-describe('Home.component', () => {
-  let instance: Home.component;
 
-  beforeEach(() => {
-    instance = new Home.component();
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ HomeComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

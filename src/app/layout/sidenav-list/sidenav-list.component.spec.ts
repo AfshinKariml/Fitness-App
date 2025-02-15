@@ -1,13 +1,25 @@
-import { Sidenav-list.component } from './sidenav-list.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SidenavListComponent } from './sidenav-list.component';
 
-describe('Sidenav-list.component', () => {
-  let instance: Sidenav-list.component;
 
-  beforeEach(() => {
-    instance = new Sidenav-list.component();
+describe('SidenavListComponent', () => {
+  let component: SidenavListComponent;
+  let fixture: ComponentFixture<SidenavListComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ SidenavListComponent ]
+    })
+    .compileComponents();
   });
 
-  it('should create an instance', () => {
-    expect(instance).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SidenavListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });
