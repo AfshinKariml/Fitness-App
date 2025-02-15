@@ -1,27 +1,122 @@
-# FitnessApp
+# Fitness App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+## Overview
+A comprehensive fitness tracking application built with Angular, featuring workout management, progress tracking, and user authentication. Try the [live demo](https://fitness-ggxdyz1ix-afshinkarimls-projects.vercel.app/).
 
-## Development server
+## Features
+- User authentication and profile management
+- Workout tracking and progress monitoring
+- Real-time statistics and achievements
+- Responsive design for all devices
+- Progressive Web App (PWA) capabilities
+- Multi-language support including Jalali calendar integration
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tech Stack
+### Core Technologies
+- Angular 15.2.0
+- Firebase 9.6.1
+- Angular Material 15.2.9
+- Three.js 0.173.0
+- RxJS 7.8.0
 
-## Code scaffolding
+### Additional Libraries
+- @angular/flex-layout for responsive layouts
+- @angular/fire for Firebase integration
+- jalali-moment for Persian calendar support
+- @angular/service-worker for PWA functionality
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prerequisites
+- Node.js (Latest LTS version recommended)
+- Angular CLI 15.2.11
+- npm or yarn package manager
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd fitness-app
+```
 
-## Running unit tests
+2. Install dependencies:
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Start the development server:
+```bash
+ng serve
+```
 
-## Running end-to-end tests
+4. Navigate to `http://localhost:4200` in your browser
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Build Configuration
 
-## Further help
+### Development Build
+```bash
+ng build --configuration=development
+```
+Features:
+- Source maps enabled
+- No optimization
+- No service worker
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Production Build
+```bash
+ng build --configuration=production
+```
+Features:
+- Full optimization
+- Service worker enabled
+- Output hashing for cache busting
+- Bundle size limits:
+  - Initial: 4MB max
+  - Component styles: 15KB max
+
+## Project Structure
+```
+fitness-app/
+├── src/
+│   ├── app/
+│   ├── assets/
+│   └── manifest.webmanifest
+├── angular.json        # Angular workspace configuration
+└── package.json       # Project dependencies and scripts
+```
+
+## Available Scripts
+- `npm start`: Start development server
+- `npm run build`: Build the application
+- `npm run watch`: Build with watch mode
+- `npm test`: Run unit tests
+
+## Testing
+- Unit tests using Karma and Jasmine
+- Chrome launcher configured for test execution
+- Coverage reporting enabled
+
+## PWA Support
+The application includes Progressive Web App features:
+- Service worker for offline functionality
+- Web manifest for installability
+- Asset caching
+- Note: Service worker is only enabled in production builds
+
+## Browser Compatibility
+- Modern evergreen browsers
+- PWA features require service worker support
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests: `npm test`
+5. Submit a pull request
+
+## License
+This project is licensed under the MIT License.
+
+## Acknowledgments
+- Angular team for the excellent framework
+- Firebase team for backend services
+- Three.js community for 3D visualization capabilities
