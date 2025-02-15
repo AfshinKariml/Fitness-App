@@ -1,7 +1,7 @@
 # Fitness App
 
 ## Overview
-A comprehensive fitness tracking application built with Angular, featuring workout management, progress tracking, and user authentication. Try the [live demo](https://fitness-ggxdyz1ix-afshinkarimls-projects.vercel.app/).
+A comprehensive fitness tracking application built with Angular, featuring workout management, progress tracking, and user authentication. Try the [live demo](https://fitness-app-git-main-afshinkarimls-projects.vercel.app).
 
 ## Features
 - User authentication and profile management
