@@ -1,0 +1,23 @@
+<mat-sidenav-container fxLayout="row">
+  
+  
+  <mat-sidenav #sidenav mode="over" [opened]="false" fxLayout="column" fxFlex="none">
+    
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+
+  
+  <mat-sidenav-content fxFlex>
+    
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    
+    
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+<app-vpn-alert></app-vpn-alert>

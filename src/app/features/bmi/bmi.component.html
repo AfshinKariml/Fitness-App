@@ -1,0 +1,54 @@
+<div class="container">
+  
+  <h1 class="title">محاسبه BMI</h1>
+
+  
+  <div class="content-wrapper">
+    
+    <form (ngSubmit)="calculateBMI()" #bmiForm="ngForm" class="bmi-form">
+      
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>قد (سانتی‌متر)</mat-label>
+        <input matInput type="number" name="height" [(ngModel)]="height" required min="50" max="250">
+        <mat-error>مقدار باید بین 50 تا 250 سانتی‌متر باشد</mat-error>
+      </mat-form-field>
+
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>وزن (کیلوگرم)</mat-label>
+        <input matInput type="number" name="weight" [(ngModel)]="weight" required min="20" max="300">
+        <mat-error>مقدار باید بین 20 تا 300 کیلوگرم باشد</mat-error>
+      </mat-form-field>
+
+      
+      <div class="button-group">
+        <button mat-raised-button type="submit">محاسبه BMI</button>
+      </div>
+    </form>
+
+    
+    <div class="history-section">
+      <h2>تاریخچه محاسبات</h2>
+
+      
+      <div class="bmi-card" *ngIf="history.length > 0">
+        <h3>BMI شما: {{ history[history.length - 1].bmi }}</h3>
+        <p>وضعیت: <span [style.color]="getStatusColor(history[history.length - 1].bmi)">{{ getStatus(history[history.length - 1].bmi) }}</span></p>
+      </div>
+
+      
+      <div class="history-list">
+        <div *ngFor="let entry of history" class="history-item">
+          <p>تاریخ: {{entry.date | date:'short'}}</p>
+          <p>قد: {{entry.height}} سانتی‌متر</p>
+          <p>وزن: {{entry.weight}} کیلوگرم</p>
+          <p>BMI: {{entry.bmi}}</p>
+        </div>
+      </div>
+
+      
+      <button mat-raised-button color="warn" (click)="clearHistory()">پاک کردن تاریخچه</button>
+    </div>
+  </div>
+</div>

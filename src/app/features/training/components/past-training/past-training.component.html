@@ -1,0 +1,57 @@
+<div class="new-training">
+  <mat-card>
+    
+    <mat-card-title>جدول فعالیت‌ها</mat-card-title>
+
+    
+    <div class="search-input">
+      <mat-form-field>
+        <mat-label>فیلتر</mat-label>
+        <input class="input-filter" matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+      </mat-form-field>
+    </div>
+
+    
+    <div class="table-container">
+      
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 styled-table">
+        
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell col-name">عنوان</th>
+          <td mat-cell *matCellDef="let element" class="body-cell col-name">{{ element.name }}</td>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="duration">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell col-duration">مدت</th>
+          <td mat-cell *matCellDef="let element" class="body-cell col-duration">{{ element.duration | number }}</td>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="calories">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell col-calories">کالری</th>
+          <td mat-cell *matCellDef="let element" class="body-cell col-calories">{{ element.calories | number }}</td>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell col-date">تاریخ</th>
+          <td mat-cell *matCellDef="let element" class="body-cell col-date">{{ element.date | persianDate }}</td>
+        </ng-container>
+
+        
+        <ng-container matColumnDef="state">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell col-state">وضعیت</th>
+          <td mat-cell *matCellDef="let element" class="body-cell col-state">{{ element.state | translation }}</td>
+        </ng-container>
+
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="custom-header-row"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" class="custom-body-row"></tr>
+      </table>
+    </div>
+
+    
+    <mat-paginator [pageSizeOptions]="[5, 8, 20, 50]"></mat-paginator>
+  </mat-card>
+</div>

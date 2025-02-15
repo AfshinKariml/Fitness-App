@@ -1,0 +1,38 @@
+<section class="login-form">
+  <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h1>ورود</h1>
+
+    
+    <mat-form-field appearance="fill">
+      <mat-label>ایمیل</mat-label>
+      <input matInput type="email" placeholder="ایمیل خود را وارد کنید"
+             ngModel name="email" email required #emailInput="ngModel" />
+      <mat-error *ngIf="emailInput.hasError('required')">وارد کردن ایمیل ضروری است</mat-error>
+      <mat-error *ngIf="emailInput.hasError('email')">لطفاً یک ایمیل معتبر وارد کنید</mat-error>
+    </mat-form-field>
+
+    
+    <mat-form-field appearance="fill">
+      <mat-label>رمز عبور</mat-label>
+      <input matInput type="password" placeholder="رمز عبور خود را وارد کنید"
+             ngModel name="password" required minlength="6" #pwInput="ngModel" />
+      <mat-error *ngIf="pwInput.hasError('required')">وارد کردن رمز عبور ضروری است</mat-error>
+      <mat-error *ngIf="pwInput.hasError('minlength')">رمز عبور باید حداقل ۶ کاراکتر باشد</mat-error>
+    </mat-form-field>
+
+    
+    <button type="submit" mat-raised-button class="submit-button" [disabled]="f.invalid">
+      ورود
+    </button>
+
+    
+    <div *ngIf="isLoading" class="spinner-overlay">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="mode-switch">
+      حساب کاربری ندارید؟
+      <a mat-button color="accent" (click)="switchMode()">ثبت نام</a>
+    </div>
+  </form>
+</section>

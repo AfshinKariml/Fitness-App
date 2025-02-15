@@ -1,0 +1,146 @@
+html, body {
+  overflow: hidden;
+}
+
+mat-toolbar {
+  background-color: #3f51b5;
+  width: 97%;
+  border-radius: 8px;
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-button {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-button:hover {
+  transform: rotate(90deg);
+}
+
+.menu-button mat-icon {
+  color: white;
+}
+
+.menu-button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.logo {
+  width: 40px; 
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.navigation-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-item a {
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.navigation-item a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navigation-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.navigation-item mat-icon {
+  transition: all 0.3s ease;
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.navigation-item a:hover mat-icon {
+  transform: scale(1.1);
+  color: white;
+}
+
+.navigation-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+}
+
+.navigation-item a:hover::after {
+  width: 100%;
+}
+
+.active-link {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.active-link mat-icon {
+  color: white !important;
+}
+
+.active-link::after {
+  width: 100% !important;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 600px) {
+  mat-toolbar {
+    width: 100%;
+    padding: 0 12px;
+    margin-top: 0;
+    border-radius: 0;
+    height: 56px;
+  }
+
+  .navigation-item {
+    gap: 8px;
+  }
+
+  .navigation-item a {
+    padding: 6px;
+  }
+
+  .navigation-item mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .menu-button {
+    margin-right: 8px;
+  }
+}

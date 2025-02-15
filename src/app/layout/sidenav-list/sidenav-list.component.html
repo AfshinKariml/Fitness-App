@@ -1,0 +1,14 @@
+<mat-nav-list class="nav-list" fxLayout="column" fxLayoutGap="4px">
+  
+  <a *ngFor="let link of links" 
+     [routerLink]="link.route" 
+     routerLinkActive="active-link" 
+     [routerLinkActiveOptions]="{ exact: true }" 
+     (click)="OnClose()" 
+     fxLayout="row">
+    
+    <mat-icon class="nav-icon">{{ link.icon }}</mat-icon>
+    
+    <span class="nav-text">{{ link.text }}</span>
+  </a>
+</mat-nav-list>

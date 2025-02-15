@@ -1,0 +1,13 @@
+<div class="anatomy">
+  
+  <div *ngIf="isLoading" class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+  
+  <app-anatomy *ngIf="!isLoading"></app-anatomy>
+</div>
+
+
+<div class="mouse-move-indicator">
+  <span>موس را حرکت دهید</span>
+</div>

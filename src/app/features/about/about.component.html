@@ -1,0 +1,78 @@
+<div class="about-container">
+  <div class="about-content">
+    
+    <mat-card class="header-card" [@fadeInUp]>
+      <h1>درباره فیتنس اپ</h1>
+      <p>برنامه فیتنس ما به شما کمک می‌کند تا به اهداف سلامتی خود برسید.</p>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </mat-card>
+
+    
+    <div class="features-grid" [@listAnimation]="features.length">
+      <div class="feature-item" *ngFor="let feature of features">
+        <mat-card>
+          <div class="icon-container">
+            <mat-icon>{{ feature.icon }}</mat-icon>
+          </div>
+          <div class="item-content">
+            <h3>{{ feature.title }}</h3>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    
+    <mat-card class="contact-card" [@fadeInUp]>
+      <mat-card-header>
+        <mat-card-title>با ما در تماس باشید</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="messageForm" (ngSubmit)="sendMessage()" class="contact-form">
+          
+          <mat-form-field appearance="outline">
+            <mat-label>نام</mat-label>
+            <input matInput formControlName="name" placeholder="نام خود را وارد کنید">
+            <mat-error *ngIf="messageForm.get('name')?.hasError('required')">
+              نام الزامی است
+            </mat-error>
+            <mat-error *ngIf="messageForm.get('name')?.hasError('minlength')">
+              نام باید حداقل 3 حرف باشد
+            </mat-error>
+          </mat-form-field>
+
+          
+          <mat-form-field appearance="outline">
+            <mat-label>ایمیل</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="ایمیل خود را وارد کنید">
+            <mat-error *ngIf="messageForm.get('email')?.hasError('required')">
+              ایمیل الزامی است
+            </mat-error>
+            <mat-error *ngIf="messageForm.get('email')?.hasError('email')">
+              لطفا یک ایمیل معتبر وارد کنید
+            </mat-error>
+          </mat-form-field>
+
+          
+          <mat-form-field appearance="outline">
+            <mat-label>پیام</mat-label>
+            <textarea matInput formControlName="message" rows="4" placeholder="پیام خود را بنویسید"></textarea>
+            <mat-error *ngIf="messageForm.get('message')?.hasError('required')">
+              پیام الزامی است
+            </mat-error>
+            <mat-error *ngIf="messageForm.get('message')?.hasError('minlength')">
+              پیام باید حداقل 10 حرف باشد
+            </mat-error>
+          </mat-form-field>
+
+          
+          <button mat-raised-button color="primary" type="submit" 
+                  [disabled]="messageForm.invalid || isLoading"
+                  class="submit-button">
+            <mat-spinner diameter="20" *ngIf="isLoading"></mat-spinner>
+            <span *ngIf="!isLoading">ارسال پیام</span>
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

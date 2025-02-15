@@ -1,0 +1,222 @@
+.support-container {
+  padding: clamp(16px, 4vw, 24px);
+  display: flex;
+  align-items: flex-start;
+}
+
+
+.support-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+}
+
+
+.header-card {
+  background-color: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(63, 81, 181, 0.15);
+}
+
+
+.header-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #ffffff44, #ffffff88, #ffffff44);
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.header-card h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 500;
+}
+
+.header-card p {
+  margin: 1rem 0;
+  opacity: 0.9;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(16px, 3vw, 24px);
+  margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+
+.support-item .mat-mdc-card {
+  background-color: #3f51b5;
+  color: white;
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(63, 81, 181, 0.1);
+}
+
+.support-item .mat-mdc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(63, 81, 181, 0.25);
+}
+
+
+.support-item .mat-mdc-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                             rgba(255,255,255,0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.support-item .mat-mdc-card:hover::after {
+  opacity: 1;
+}
+
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin: clamp(1.5rem, 4vw, 2rem) 0 clamp(1rem, 3vw, 1.5rem);
+  position: relative;
+}
+
+.icon-container::before {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.support-item .mat-mdc-card:hover .icon-container::before {
+  transform: scale(1.5);
+}
+
+.icon-container mat-icon {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  height: auto;
+  width: auto;
+  color: white;
+  z-index: 1;
+}
+
+
+.item-content {
+  text-align: center;
+  padding: 0 clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem);
+}
+
+.item-content h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+.item-content p {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+
+.contact-card {
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: clamp(1.5rem, 5vw, 2.5rem);
+  box-shadow: 0 4px 20px rgba(63, 81, 181, 0.15);
+}
+
+.contact-header {
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 1.5rem) 0;
+}
+
+.contact-content {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+
+.contact-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(8px, 2vw, 16px);
+  justify-content: center;
+}
+
+.contact-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.contact-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.contact-button mat-icon {
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  height: auto;
+  width: auto;
+}
+
+.contact-button:hover mat-icon {
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 600px) {
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 961px) {
+  .support-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}

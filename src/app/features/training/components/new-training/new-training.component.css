@@ -1,0 +1,38 @@
+mat-card-title {
+  font-family: "Rubik", sans-serif;
+}
+
+
+mat-option {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+
+.new-training {
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+
+mat-card {
+  padding: 0 45px;
+}
+
+
+.start-current-btn:disabled {
+  background-color: rgb(182, 185, 185);
+}
+.start-current-btn {
+  background-color: #3f51b5;
+  color: white !important;
+}
+
+
+@media (max-width: 600px) {
+  mat-card {
+    padding: 0 30px;
+  }
+}

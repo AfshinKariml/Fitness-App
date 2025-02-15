@@ -1,0 +1,35 @@
+<mat-toolbar class="toolbar">
+  
+  <button mat-icon-button aria-label="باز کردن منو" (click)="OnToggleSidenav()" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  
+  <div class="logo" fxHide.xs>
+    <img src="../../../assets/icons/Logo.png" alt="Logo" style="width: 100%; height: auto;">
+  </div>
+
+  
+  <a class="lightMood" (click)="toggleTheme()" mat-icon-button>
+    <mat-icon style="color: white;">{{ isDarkMode ? 'brightness_3' : 'brightness_7' }}</mat-icon>
+  </a>
+
+  
+  <div fxFlex="auto" fxLayout="row" fxLayoutAlign="end center">
+    <mat-nav-list class="navigation-item" fxLayout="row" fxLayoutAlign="center center">
+      <ng-container *ngFor="let link of links">
+        <ng-container *ngIf="link.showForAuth === undefined || link.showForAuth === isAuth">
+          <a
+            mat-icon-button
+            [routerLink]="link.route"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="link.icon === 'logout' ? onLogout() : null"
+            [attr.aria-label]="link.text">
+            <mat-icon>{{ link.icon }}</mat-icon>
+          </a>
+        </ng-container>
+      </ng-container>
+    </mat-nav-list>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,33 @@
+<div class="main-container" fxLayout="row" fxLayout.lt-md="column">
+
+  
+  <div class="workout-image-section" fxFlex="70" fxFlex.lt-md="100">
+    <div class="image-container">
+      
+      <img mat-card-image src="../../../assets/image/Banner.jpg" alt="تمرین" class="main-image" />
+      
+      
+      <div class="overlay-controls">
+        <button mat-mini-fab class="control-button" (click)="nextTrack()">
+          <mat-icon>skip_next</mat-icon>
+        </button>
+        <button mat-mini-fab class="control-button" (click)="togglePlay()">
+          <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
+        </button>
+        <button mat-mini-fab class="control-button" (click)="previousTrack()">
+          <mat-icon>skip_previous</mat-icon>
+        </button>
+        
+        
+        <span class="bpm-counter">Listen To Music</span>
+      </div>
+    </div>
+
+    
+    <audio #audioPlayer [src]="playlist[currentTrackIndex]" (ended)="onTrackEnded()"></audio>
+  </div>
+
+  
+  <app-page-training fxFlex="30" fxFlex.lt-md="100"></app-page-training>
+
+</div>

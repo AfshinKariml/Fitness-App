@@ -1,0 +1,88 @@
+.anatomy {
+  height: 45vh;
+  padding: 70px 0;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.mouse-move-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 25px;
+  white-space: nowrap;
+  z-index: 10; 
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -5px); }
+}
+
+
+@media (max-width: 768px) {
+  .anatomy {
+    height: 50vh;
+    padding: 40px 0;
+  }
+
+  .mouse-move-indicator {
+    bottom: 20px; 
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .anatomy {
+    height: 55vh; 
+    padding: 15px 0;
+  }
+
+  .mouse-move-indicator {
+    bottom: 30px; 
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
